@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+{% if ans != "Saved succesfully!!" %}
+<form action="{% url 'main:home' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+  <input type="submit" value="Submit">
+</form>
+<br>
+{% endif %}
+{{ ans }}
+
+<form action="{% url 'main:home' %}" method="GET">
+    {% csrf_token %}
+    <input type="submit" value="Back">
+</form>
+</body>
+</html>
+</body>
+</html>

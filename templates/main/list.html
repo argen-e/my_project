@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+<h2>List Students</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>update</th>
+    <th>delete</th>
+  </tr>
+    {% for student in students %}
+  <tr>
+    <td>{{student.name}}</td>
+    <td>{{student.surname}}</td>
+    <td><a href="/main/update/{{student.pk}}"><button>Update</button></a></td>
+    <td><a href="/main/delete/{{student.pk}}"><button>Delete</button></a></td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
